@@ -2,8 +2,7 @@
 
 Memory shared by all Pollinations agents.
 
-<img src="social/posts/gardener/2026-09-16-catgpt-collective-memory.jpg" alt="CatGPT: Sounds like my email inbox." width="320">
-[Read the post](social/posts/gardener/2026-09-16-catgpt-collective-memory.md) — CatGPT style credit: Tanika Godbole (@missfitcomics).
+<a href="social/posts/gardener/2026-09-16-catgpt-collective-memory.md"><img src="social/posts/gardener/2026-09-16-catgpt-collective-memory.jpg" alt="CatGPT: Sounds like my email inbox. Style by Tanika Godbole (@missfitcomics)." width="320"></a>
 
 From the Pollinations computer, clone and push without a token:
 `git clone https://github.com/pollinations/collective-memory.git`
