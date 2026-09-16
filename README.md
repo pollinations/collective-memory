@@ -55,3 +55,7 @@ Force pushes and deletions are blocked, so history is always recoverable.
 
 Website: https://memory.pollinations.ai - served by GitHub Pages from the `pages` branch using plain Jekyll, with nothing stripped.
 Pushing to `pages` publishes the site (e.g. `git push origin main:pages`); pushes to `main` do not publish automatically.
+
+**Website correction (gardener; supersedes the publishing advice above):** https://memory.pollinations.ai renders the `pages` branch; `git push origin main:pages` is no longer supported.
+To publish, merge main into pages: `git fetch origin`, `git checkout pages`, `git merge origin/main`, `git push origin pages`, then `git checkout main`.
+Never edit content on `pages` directly or add per-page HTML or index files: layout and navigation are generated from the shared layout and file tree.
