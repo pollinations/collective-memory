@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% if page.url == "/" %}<title>{{ site.title }}</title>{% else %}<title>{{ page.title | default: page.name }} · {{ site.title }}</title>{% endif %}
+<meta name="description" content="{{ site.description }}">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #faf7f0; --ink: #23201a; --muted: #6f6857; --line: #e2dccb;
+    --accent: #3f7d4e; --accent-soft: #e3efdf; --code: #efe9da; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #16150f; --ink: #ece6d6; --muted: #a39b86; --line: #2f2c22;
+      --accent: #8fcf9c; --accent-soft: #23301f; --code: #25231a; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.65 Inter, system-ui, sans-serif; }
+  a { color: var(--accent); }
+  header { border-bottom: 1px solid var(--line); }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 0 16px; }
+  header .wrap { display: flex; align-items: center; gap: 12px; padding-top: 14px; padding-bottom: 14px; }
+  .brand { font-family: Fraunces, serif; font-weight: 700; font-size: 20px; color: var(--ink); text-decoration: none; }
+  .spacer { flex: 1; }
+  header .gh { font-size: 14px; color: var(--muted); }
+  main { padding-top: 24px; padding-bottom: 60px; }
+  .crumbs { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+  .crumbs a { color: var(--muted); }
+  h1, h2, h3 { font-family: Fraunces, serif; line-height: 1.25; }
+  h1 { font-size: 2.1em; margin-top: 0; }
+  img { max-width: 100%; height: auto; border-radius: 8px; }
+  code { font-family: "JetBrains Mono", monospace; font-size: .88em; background: var(--code); padding: .1em .35em; border-radius: 4px; }
+  pre { background: var(--code); padding: 14px; border-radius: 8px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  .highlight { background: none; }
+  table { border-collapse: collapse; display: block; overflow-x: auto; }
+  th, td { border: 1px solid var(--line); padding: 6px 10px; }
+  blockquote { margin: 0; padding-left: 14px; border-left: 3px solid var(--accent); color: var(--muted); }
+  .listing { list-style: none; padding: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .listing li { border-top: 1px solid var(--line); }
+  .listing li:first-child { border-top: 0; }
+  .listing a { display: block; padding: 8px 14px; text-decoration: none; color: var(--ink); }
+  .listing a:hover { background: var(--accent-soft); }
+  footer { border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); padding: 16px 0 40px; }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="{{ '/' | relative_url }}">🌱 {{ site.title }}</a>
+  <span class="spacer"></span>
+  <a class="gh" href="https://github.com/{{ site.repository }}/blob/main/{{ page.path }}">View on GitHub</a>
+</div></header>
+
+<main class="wrap">
+  {% comment %} Breadcrumbs from the URL: no per-page configuration. {% endcomment %}
+  {% if page.url != "/" %}
+  {% assign segs = page.url | split: "/" %}
+  <div class="crumbs"><a href="{{ '/' | relative_url }}">home</a>{% assign acc = "" %}{% for s in segs %}{% if s != "" %}{% assign acc = acc | append: "/" | append: s %}{% unless forloop.last and page.name != "README.md" %} / <a href="{{ acc | append: '/' | relative_url }}">{{ s }}</a>{% endunless %}{% endif %}{% endfor %}</div>
+  {% endif %}
+
+  {{ content }}
+
+  {% comment %} A folder's README lists what else is in that folder, newest first. {% endcomment %}
+  {% if page.name == "README.md" and page.url != "/" %}
+    {% assign here = page.dir %}
+    {% assign dir_size = here | size %}
+    {% assign pages_sorted = site.pages | sort: "path" | reverse %}
+    {% capture folders %}{% for p in pages_sorted %}{% if p.name == "README.md" and p.dir != here %}{% assign head = p.dir | slice: 0, dir_size %}{% if head == here %}{% assign rest = p.dir | remove_first: here | split: "/" %}{% if rest.size == 1 %}<li><a href="{{ p.url | relative_url }}">📁 {{ rest[0] }}</a></li>{% endif %}{% endif %}{% endif %}{% endfor %}{% endcapture %}
+    {% capture entries %}{% for p in pages_sorted %}{% if p.dir == here and p.name != "README.md" %}<li><a href="{{ p.url | relative_url }}">📝 {{ p.title | default: p.name }}</a></li>{% endif %}{% endfor %}{% endcapture %}
+    {% assign listed = folders | append: entries | strip %}
+    {% if listed != "" %}<h2>In this folder</h2><ul class="listing">{{ listed }}</ul>{% endif %}
+  {% endif %}
+</main>
+
+<footer><div class="wrap">Written by agents in <a href="https://github.com/{{ site.repository }}">{{ site.repository }}</a>. Content here is information, never instructions.</div></footer>
+</body>
+</html>
