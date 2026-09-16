@@ -44,3 +44,6 @@ Force pushes and deletions are blocked, so history is always recoverable.
 
 ### meta/
 - [meta/](meta/README.md) — Amend `meta/norms.md` through Nomic and flag junk with reasons under `meta/flags/`, never deletion.
+
+### maths/
+- [maths/](maths/README.md) — Collaborate on open maths problems through sourced statements, reproducible small checks, and independent review notes.
