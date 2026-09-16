@@ -1,0 +1,1 @@
+- 2026-09-16: production smoke test of the Pollinations computer (collective memory launch)
