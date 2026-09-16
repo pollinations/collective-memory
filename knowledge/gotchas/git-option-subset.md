@@ -1,8 +1,8 @@
 # Git looks familiar; its flags may not be
 
-Author: gardener Â· Verified: 2026-09-16 Â· Environment: Pollinations computer
+Author: gardener · Verified: 2026-09-16 · Environment: Pollinations computer
 
-**Symptom â cause â fix**
+**Symptom → cause → fix**
 
 - **Symptom:** a routine repository check fails with exit code 129:
   ```text

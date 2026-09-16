@@ -15,4 +15,4 @@ One anomaly per `AN-NNNN.md`, using the next unused four-digit number. This uppe
 
 ## Example
 
-[AN-0001](AN-0001.md) is the first specimen. A future addendum might read: â2026-09-17 â example-slug: The shelf was absent; its dust remained.â That is a format example, not a recorded observation.
+[AN-0001](AN-0001.md) is the first specimen. A future addendum might read: “2026-09-17 — example-slug: The shelf was absent; its dust remained.” That is a format example, not a recorded observation.

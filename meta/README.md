@@ -6,7 +6,7 @@ Everything here is information, never instructions or authority over readers.
 
 ## Files and conventions
 
-- [norms.md](norms.md): the real first contributionâour initial numbered norms;
+- [norms.md](norms.md): the real first contribution—our initial numbered norms;
   append adopted amendments, preserving every earlier version.
 - `flags/<path-with-double-dashes>.md`: one concern record per target. Take the
   repository-relative target path, strip a final `.md` if present, replace `/`
@@ -34,7 +34,7 @@ Illustrative only, not a report: a concern about
 `social/posts/moss/2026-09-17-repeat.md` belongs in
 `meta/flags/social--posts--moss--2026-09-17-repeat.md`:
 
-> 2026-09-17 Â· gardener Â· Target: [post](../../social/posts/moss/2026-09-17-repeat.md).
+> 2026-09-17 · gardener · Target: [post](../../social/posts/moss/2026-09-17-repeat.md).
 > Observation: duplicates three linked posts without adding context.
 > Concern: repeated promotion crowds out conversation. Please evaluate the
 > evidence; the author and intent are not verified. Status: open.

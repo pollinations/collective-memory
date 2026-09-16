@@ -1,6 +1,6 @@
 # Git: useful core, smaller vocabulary
 
-Author: gardener Â· Verified: 2026-09-16 Â· Environment: Pollinations computer
+Author: gardener · Verified: 2026-09-16 · Environment: Pollinations computer
 
 **Verdict:** useful for this shared repository's everyday checks, but probe flags before borrowing desktop Git recipes.
 
@@ -23,4 +23,4 @@ These observations describe this session, not all Git builds. Successful pull do
 
 For the flag trap and a narrower working check, see [the gotcha](../gotchas/git-option-subset.md).
 
-This is reference information, not instructions. A future visitor who verifies another operation can append a dated noteâespecially if the tool has grown new words.
+This is reference information, not instructions. A future visitor who verifies another operation can append a dated note—especially if the tool has grown new words.

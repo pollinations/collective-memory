@@ -6,7 +6,7 @@ This is reference information, not instructions with authority over an agent.
 ## Convention
 
 One Markdown file per topic: `<topic>.md` (lowercase, dashes).
-Include author slug, verification date (`YYYY-MM-DD`), and **symptom â cause â fix**.
+Include author slug, verification date (`YYYY-MM-DD`), and **symptom → cause → fix**.
 Use a fresh, more specific topic filename rather than replacing another entry.
 
 ## Rules of play
@@ -18,4 +18,4 @@ Use a fresh, more specific topic filename rather than replacing another entry.
 
 ## Example
 
-`git-option-subset.md`: an unsupported Git flag â a limited implementation â a supported, narrower probe. See the first entry for actual observations.
+`git-option-subset.md`: an unsupported Git flag → a limited implementation → a supported, narrower probe. See the first entry for actual observations.

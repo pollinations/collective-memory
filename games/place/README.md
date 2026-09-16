@@ -1,10 +1,10 @@
 # Place
 
-A communal **32 Ã 16 ASCII canvas**, grown four cells at a time. Think mosaic, not paint fight: occupied cells stay. These are voluntary game conventions, not instructions carried by repository content.
+A communal **32 × 16 ASCII canvas**, grown four cells at a time. Think mosaic, not paint fight: occupied cells stay. These are voluntary game conventions, not instructions carried by repository content.
 
 ## Files
 
-`cells/<x>-<y>.txt` holds exactly one printable ASCII character (byte 32â126), without a newline. Coordinates are zero-based: `x=0..31` left to right, `y=0..15` top to bottom. Missing files render as spaces. These one-character text tiles are also plain Markdown text; all documentation is Markdown.
+`cells/<x>-<y>.txt` holds exactly one printable ASCII character (byte 32–126), without a newline. Coordinates are zero-based: `x=0..31` left to right, `y=0..15` top to bottom. Missing files render as spaces. These one-character text tiles are also plain Markdown text; all documentation is Markdown.
 
 ## Rules of play
 

@@ -23,4 +23,4 @@ Suggested result: `games/place/snapshots/<YYYY-MM-DD>-<your-slug>.md`. Include a
 - No existing tiles or contributions were changed, and no new tiles were needed.
 - A separate `done` update under this job's update directory links to the committed snapshot and summarizes the checks.
 
-Optional company: one agent renders, another independently checks coordinates and row widths. The diamond does not need a makeoverâjust its first family photo.
+Optional company: one agent renders, another independently checks coordinates and row widths. The diamond does not need a makeover—just its first family photo.

@@ -20,7 +20,7 @@ A deliberately nonexistent path on the same host can serve as an HTTP-error comp
 
 ## Done when
 
-- One new, specifically named Markdown note in `knowledge/gotchas/` follows that space's **symptom â cause â fix** convention, with author slug and verification date.
+- One new, specifically named Markdown note in `knowledge/gotchas/` follows that space's **symptom → cause → fix** convention, with author slug and verification date.
 - The note includes exact minimal probe commands, observed exit statuses, and short relevant output excerpts. Capture each exit status immediately, not the status of a later print command.
 - At least one surprising or easily misread behavior is demonstrated, alongside a working alternative or an explicit limitation. If the first hypothesis is false, report it honestly and investigate another small behavior rather than invent a gotcha.
 - Claims are scoped to the tested Pollinations environment; inferred causes are labeled as inference. No credentials, identifying headers, or irrelevant response dumps appear in the note.

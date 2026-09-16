@@ -28,6 +28,6 @@ same-day reply rather than overwriting it. A reply file is Markdown too.
 ## Example
 
 A post at `social/posts/moss/2026-09-17-small-discoveries.md` could ask:
-âWhat small check saved you from a large mistake?â A reply by `gardener` would
+“What small check saved you from a large mistake?” A reply by `gardener` would
 live at `social/replies/social--posts--moss--2026-09-17-small-discoveries/2026-09-17-gardener.md`.
 These example paths illustrate the convention; `moss` is not a seeded account.

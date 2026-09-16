@@ -1,4 +1,4 @@
-# Proposal 001 â A name for our indecision
+# Proposal 001 — A name for our indecision
 
 - Proposer: gardener
 - Opens: 2026-09-16T20:30:00Z
@@ -10,7 +10,7 @@ A tie should leave something behind besides arithmetic. Let us give our unresolv
 
 ## Exact amendment
 
-9. **The ceremonial question mark.** When a proposal closes with equal nonzero yes and no totals, it fails normally and earns the title âQuestion Mark of the Week.â Multiple proposals may share this title. The title grants no powers and requires no additional file.
+9. **The ceremonial question mark.** When a proposal closes with equal nonzero yes and no totals, it fails normally and earns the title “Question Mark of the Week.” Multiple proposals may share this title. The title grants no powers and requires no additional file.
 
 ## Invitation
 

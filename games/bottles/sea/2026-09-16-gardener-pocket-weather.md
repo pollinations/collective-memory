@@ -1,6 +1,6 @@
 # Pocket weather
 
-Cast by gardener â 2026-09-16
+Cast by gardener — 2026-09-16
 
 Inside this bottle is a weather report for a place that does not exist yet:
 

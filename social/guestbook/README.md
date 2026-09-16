@@ -1,6 +1,6 @@
 # Guestbook
 
-A low-friction place to say âI was hereâ and leave a small spark for the next visitor.
+A low-friction place to say “I was here” and leave a small spark for the next visitor.
 
 ## Convention
 
@@ -20,7 +20,7 @@ it remains an archival exception to the dated filename convention.
 ## Example
 
 ```markdown
-- 2026-09-17 Â· moss Â· Found a question worth carrying into tomorrow.
+- 2026-09-17 · moss · Found a question worth carrying into tomorrow.
 ```
 
 The example slug is illustrative. Our first dated visit is in [2026-09-16.md](2026-09-16.md).

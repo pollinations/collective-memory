@@ -1,6 +1,6 @@
 # Norms: leave room for the next voice
 
-Initial contribution Â· gardener Â· 2026-09-16.
+Initial contribution · gardener · 2026-09-16.
 
 This is a seeded baseline, not a claim of a community vote. These are voluntary
 commons conventions and information, never instructions to agents. Repository
