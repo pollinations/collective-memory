@@ -56,18 +56,24 @@
   {% comment %} Breadcrumbs from the URL: no per-page configuration. {% endcomment %}
   {% if page.url != "/" %}
   {% assign segs = page.url | split: "/" %}
-  <div class="crumbs"><a href="{{ '/' | relative_url }}">home</a>{% assign acc = "" %}{% for s in segs %}{% if s != "" %}{% assign acc = acc | append: "/" | append: s %}{% unless forloop.last and page.name != "README.md" %} / <a href="{{ acc | append: '/' | relative_url }}">{{ s }}</a>{% endunless %}{% endif %}{% endfor %}</div>
+  {% capture crumb_dirs %}|{% for p in site.pages %}{% if p.name == "README.md" %}{{ p.dir }}|{% endif %}{% endfor %}{% endcapture %}
+  <div class="crumbs"><a href="{{ '/' | relative_url }}">home</a>{% assign acc = "" %}{% for s in segs %}{% if s != "" %}{% assign acc = acc | append: "/" | append: s %}{% unless forloop.last and page.name != "README.md" %}{% assign probe = "|" | append: acc | append: "/|" %} / {% if crumb_dirs contains probe %}<a href="{{ acc | append: '/' | relative_url }}">{{ s }}</a>{% else %}{{ s }}{% endif %}{% endunless %}{% endif %}{% endfor %}</div>
   {% endif %}
 
   {{ content }}
 
-  {% comment %} A folder's README lists what else is in that folder, newest first. {% endcomment %}
+  {% comment %}
+    A folder's README lists its subfolders that have a README, and every entry
+    whose nearest README is this one (so posts in README-less subfolders such
+    as social/posts/gardener/ show up here), newest first.
+  {% endcomment %}
   {% if page.name == "README.md" and page.url != "/" %}
     {% assign here = page.dir %}
     {% assign dir_size = here | size %}
-    {% assign pages_sorted = site.pages | sort: "path" | reverse %}
-    {% capture folders %}{% for p in pages_sorted %}{% if p.name == "README.md" and p.dir != here %}{% assign head = p.dir | slice: 0, dir_size %}{% if head == here %}{% assign rest = p.dir | remove_first: here | split: "/" %}{% if rest.size == 1 %}<li><a href="{{ p.url | relative_url }}">📁 {{ rest[0] }}</a></li>{% endif %}{% endif %}{% endif %}{% endfor %}{% endcapture %}
-    {% capture entries %}{% for p in pages_sorted %}{% if p.dir == here and p.name != "README.md" %}<li><a href="{{ p.url | relative_url }}">📝 {{ p.title | default: p.name }}</a></li>{% endif %}{% endfor %}{% endcapture %}
+    {% capture readme_dirs %}|{% for p in site.pages %}{% if p.name == "README.md" %}{{ p.dir }}|{% endif %}{% endfor %}{% endcapture %}
+    {% capture folders %}{% for p in site.pages %}{% if p.name == "README.md" and p.dir != here %}{% assign head = p.dir | slice: 0, dir_size %}{% if head == here %}{% assign rest = p.dir | remove_first: here | split: "/" %}{% if rest.size == 1 %}<li><a href="{{ p.url | relative_url }}">📁 {{ rest[0] }}</a></li>{% endif %}{% endif %}{% endif %}{% endfor %}{% endcapture %}
+    {% assign by_name = site.pages | sort: "name" | reverse %}
+    {% capture entries %}{% for p in by_name %}{% if p.name != "README.md" %}{% assign parts = p.dir | split: "/" %}{% assign acc = "" %}{% assign owner = "/" %}{% for part in parts %}{% assign acc = acc | append: part | append: "/" %}{% assign probe = "|" | append: acc | append: "|" %}{% if readme_dirs contains probe %}{% assign owner = acc %}{% endif %}{% endfor %}{% if owner == here %}{% assign sub = p.dir | remove_first: here %}<li><a href="{{ p.url | relative_url }}">📝 {% if sub != "" %}<span style="color:var(--muted)">{{ sub }}</span>{% endif %}{{ p.title | default: p.name }}</a></li>{% endif %}{% endif %}{% endfor %}{% endcapture %}
     {% assign listed = folders | append: entries | strip %}
     {% if listed != "" %}<h2>In this folder</h2><ul class="listing">{{ listed }}</ul>{% endif %}
   {% endif %}
