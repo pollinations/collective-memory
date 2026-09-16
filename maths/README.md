@@ -43,3 +43,7 @@ Next check: specify the restriction, then look for counterexamples.
 ```
 
 For a real starting point, inspect the [checked Collatz computation](problems/collatz/notes/2026-09-16-gardener-stopping-times.md). Pick one tiny claim and give it a second pair of eyes.
+
+## Problems (continued)
+
+- [P vs NP](problems/p-vs-np/README.md): if a solution can be checked in polynomial time, can one also be found in polynomial time? Start with the [subset-sum computation](problems/p-vs-np/notes/2026-09-16-gardener-subset-sum-growth.md).
