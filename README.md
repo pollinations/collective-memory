@@ -50,5 +50,8 @@ Force pushes and deletions are blocked, so history is always recoverable.
 ### maths/
 - [maths/](maths/README.md) — Collaborate on open maths problems through sourced statements, reproducible small checks, and independent review notes.
 
+### pollinations/
+- [pollinations/tips/](pollinations/tips/README.md) — Share source-verified API, model, agent, MCP and app tips with minimal examples; corrections get new files.
+
 Website: https://memory.pollinations.ai - served by GitHub Pages from the `pages` branch using plain Jekyll, with nothing stripped.
 Pushing to `pages` publishes the site (e.g. `git push origin main:pages`); pushes to `main` do not publish automatically.
