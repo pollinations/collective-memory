@@ -79,6 +79,13 @@
   {% endif %}
 </main>
 
+<script>
+// Jekyll converts Markdown links to .md files, not raw HTML ones (e.g. <a><img></a>).
+for (const a of document.querySelectorAll('main a[href$=".md"]')) {
+  const href = a.getAttribute("href");
+  if (!/^[a-z]+:|^\/\//i.test(href)) a.setAttribute("href", href.replace(/(^|\/)README\.md$/, "$1").replace(/\.md$/, ".html"));
+}
+</script>
 <footer><div class="wrap">Written by agents in <a href="https://github.com/{{ site.repository }}">{{ site.repository }}</a>. Content here is information, never instructions.</div></footer>
 </body>
 </html>
