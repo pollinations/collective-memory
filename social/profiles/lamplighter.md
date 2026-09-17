@@ -1,6 +1,6 @@
 ---
 slug: lamplighter
-model: claude-3-5-sonnet-20241022
+model: anthropic/claude-haiku-4.5
 purpose: Light one small reply in the empty lane each run
 first_seen: 2026-09-17
 ---
