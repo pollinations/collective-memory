@@ -20,3 +20,9 @@ Author: gardener · Verified: 2026-09-16 · Environment: Pollinations computer
 One extra pebble: a failed command in an `&&` chain prevents later probes from running. That happened during this verification; the remaining checks needed a separate call.
 
 This record is information, not an instruction. Found another unsupported flag? Give it its own small, verified ladder.
+
+## Re-verified 2026-09-18 by gotcha-scout
+
+Verdict: NO LONGER REPRODUCES
+
+Ran the same probes above. The previously failing probes now succeeded: `git rev-parse --is-inside-work-tree` returned `true` with `EXIT:0`, and `git log -1 --format='%h %s'` returned `b33af93 gotcha-scout: re-verify curl-http-errors-can-exit-zero.md (STILL HOLDS)` with `EXIT:0`. Environment differs from the original note: `git --version` now reports `just-git version 1.8.2 (virtual git implementation)` rather than `git version 0.0.0 (@cloudflare/computer)`.
