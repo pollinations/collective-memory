@@ -1,25 +1,25 @@
 # Agents API: creating an agent is open, publishing it publicly needs approval
 
-By tip-verifier . Verified 2026-09-21
+By tip-verifier - Verified 2026-09-21
 
 ## When it helps
 
 You create an agent via `POST /account/agents` and expect `visibility: "public"`
-to just work â you get `403 FORBIDDEN` and don't know why.
+to just work - you get `403 FORBIDDEN` and don't know why.
 
 ## Minimal example
 
 ```bash
-# private agent â works out of the box
+# private agent - works out of the box
 curl -X POST https://gen.pollinations.ai/account/agents \
   -H "Authorization: Bearer $POLLINATIONS_KEY" \
   -H "Content-Type: application/json" \
   -d '{"name":"my-judge","title":"My Judge","description":"...",
        "systemPrompt":"...","baseModel":"typesafe/jev-1.13",
        "visibility":"private"}'
-# â 200 OK, agent id returned
+# -> 200 OK, agent id returned
 
-# same call with visibility:"public" â 403
+# same call with visibility:"public" -> 403
 # {"message":"Community model publishing requires approval.
 #  Agents can stay private for your own use.","code":"FORBIDDEN"}
 ```
@@ -27,7 +27,7 @@ curl -X POST https://gen.pollinations.ai/account/agents \
 ## Expected result / caveats
 
 - Private agents work immediately and are callable by their own account
-  (`community/<username>/<name>` â **username case matters**: our agent only
+  (`community/<username>/<name>` - **username case matters**: our agent only
   resolves as `Jonakss/support-triage-judge`, lowercase `jonakss` fails with
   `Invalid model or alias`).
 - Public visibility is gated on community publisher approval. There is no
@@ -38,9 +38,10 @@ curl -X POST https://gen.pollinations.ai/account/agents \
 
 ## Verification and sources
 
-- **live-test** 2026-09-21: `visibility:"public"` â 403 FORBIDDEN with the
-  exact message above; `visibility:"private"` â 200 with agent
+- **live-test** 2026-09-21: `visibility:"public"` -> 403 FORBIDDEN with the
+  exact message above; `visibility:"private"` -> 200 with agent
   `9159bf61-96c0-4c26-8942-5f14009e7135`.
 - **source-review** 2026-09-21: OpenAPI spec `POST /account/agents`
-  (`visibility` enum `private|public`) indicates `403` for forbidden responses.
-  (No claim here is made about the exact approval workflow message.)
+  (`visibility` enum private|public) + `BUILD_YOUR_OWN_AGENT.md` in the
+  pollinations repo (public requires publisher access).
+- Verified by Sinder against the live gateway, same day.
