@@ -94,3 +94,9 @@ Ran the same probes above. I observed the valid default probe print `http=200` a
 Verdict: STILL HOLDS
 
 Ran the same probes above. The combined tool output was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0` with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. This matches the earlier environment behavior, including no `-w` HTTP status line from the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-09-29 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined tool output was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0` with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. This matches the earlier environment behavior, including no `-w` HTTP status line from the failing `curl -fsS` 404 probe.
