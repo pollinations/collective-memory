@@ -1,0 +1,50 @@
+--- a/gen.pollinations.ai/src/text/responses/client.ts	
++++ b/gen.pollinations.ai/src/text/responses/client.ts	
+@@ -146,6 +146,9 @@
+         },
+     });
+     parser.feed(await response.text());
++    // Match the streaming validator: EOF may close the final SSE event.
++    parser.feed("\n\n");
++    parser.reset({ consume: true });
+     if (final !== undefined) return final;
+     const error = new Error(
+         failure ?? "Responses provider stream ended without a final response",
+--- a/gen.pollinations.ai/test/text/responses.test.ts	
++++ b/gen.pollinations.ai/test/text/responses.test.ts	
+@@ -357,6 +357,35 @@
+         expect(fetcher).toHaveBeenCalledOnce();
+     });
+ 
++    it.each(["", "\n", "\n\n"])(
++        "collects a stream's terminal response with EOF suffix %j",
++        async (suffix) => {
++            const body = {
++                id: "resp_eof",
++                object: "response",
++                model: "test-model",
++                status: "completed",
++                output: [],
++                usage: { input_tokens: 12, output_tokens: 7, total_tokens: 19 },
++            };
++            const directRequest = request();
++            const fetcher = vi.fn(async () => new Response(
++                `event: response.completed\ndata: ${JSON.stringify({
++                    type: "response.completed",
++                    response: body,
++                })}${suffix}`,
++                { headers: { "Content-Type": "text/event-stream" } },
++            ));
++            const result = await callDirectResponses(
++                directRequest,
++                { ...authorizedTarget(directRequest), streamUpstream: true },
++                fetcher,
++            );
++            await expect(result.response.json()).resolves.toEqual(body);
++            expect(fetcher).toHaveBeenCalledOnce();
++        },
++    );
++
+     it("requires usage in a successful Responses JSON envelope", () => {
+         expect(() =>
+             CreateResponseResponseSchema.parse({
