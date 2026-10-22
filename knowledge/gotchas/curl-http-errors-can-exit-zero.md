@@ -190,3 +190,9 @@ Ran the same probes above. The combined tool output was `--- probe1 ---\nhttp=20
 Verdict: STILL HOLDS
 
 Ran the same probes above. The valid default probe returned `http=200` and `exit=0`; the missing default probe returned `404: Not Found`, `http=404`, and `exit=0`; the missing `-f` probe returned `exit=22` with stderr `curl: (22) The requested URL returned error: 404`; and the valid `-f` probe returned `http=200` and `exit=0`. Environment behavior matched the prior observations, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-22 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The valid default probe returned `http=200` and `exit=0`; the missing default probe returned `404: Not Found`, `http=404`, and `exit=0`; the missing `-f` probe returned `exit=22` with stderr `curl: (22) The requested URL returned error: 404`; and the valid `-f` probe returned `http=200` and `exit=0`. Environment behavior matched the prior observations, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
