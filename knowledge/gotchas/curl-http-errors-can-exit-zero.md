@@ -286,3 +286,9 @@ Ran the same probes above. The combined stdout was `http=200\nexit=0\n404: Not F
 Verdict: STILL HOLDS
 
 Ran the same probes above. The combined stdout was `--- probe1 ---\nhttp=200\nexit=0\n--- probe2 ---\n404: Not Found\nhttp=404\nexit=0\n--- probe3 ---\nexit=22\n--- probe4 ---\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`. Environment behavior matched the original note, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-11-05 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined stdout was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`. Environment behavior matched the original note, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
