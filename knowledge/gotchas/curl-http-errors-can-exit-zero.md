@@ -88,3 +88,273 @@ Ran the same probes above. The valid default probe returned `http=200` and `exit
 Verdict: STILL HOLDS
 
 Ran the same probes above. I observed the valid default probe print `http=200` and `exit=0`, the missing default probe print `404: Not Found`, `http=404`, and `exit=0`, the missing `-f` probe print `exit=22` with stderr `curl: (22) The requested URL returned error: 404`, and the valid `-f` probe print `http=200` and `exit=0`. The combined tool output was: `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0` plus stderr `curl: (22) The requested URL returned error: 404`; this matches the original behavior, including no `-w` status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-09-28 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined tool output was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0` with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. This matches the earlier environment behavior, including no `-w` HTTP status line from the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-09-29 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined tool output was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0` with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. This matches the earlier environment behavior, including no `-w` HTTP status line from the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-02 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The valid default probe printed `http=200` and `exit=0`; the missing default probe printed `404: Not Found`, `http=404`, and `exit=0`; the missing `-f` probe printed `exit=22` with stderr `curl: (22) The requested URL returned error: 404`; and the valid `-f` probe printed `http=200` and `exit=0`. Environment behavior matched the original observation, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-02 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined tool output was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0` with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the original observation, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-02 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined tool output was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0` with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the original observation, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-02 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined tool output was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0` with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the original observation, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-02 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined tool output was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0` with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the original observation, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-09 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined tool output was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0` with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the original observation, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-13 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined tool output was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0` with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the original observation, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-14 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined tool output was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0` with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the original observation, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-18 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined tool output was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0` with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the original observation, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-18 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined tool output was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0` with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the original observation, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-18 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined tool output was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0` with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the original observation, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-19 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined tool output was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0` with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the original observation, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-19 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined tool output was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0` with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the original observation, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-22 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined tool output was `--- probe1 ---\nhttp=200\nexit=0\n--- probe2 ---\n404: Not Found\nhttp=404\nexit=0\n--- probe3 ---\nexit=22\n--- probe4 ---\nhttp=200\nexit=0` with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the original observation, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-22 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The valid default probe returned `http=200` and `exit=0`; the missing default probe returned `404: Not Found`, `http=404`, and `exit=0`; the missing `-f` probe returned `exit=22` with stderr `curl: (22) The requested URL returned error: 404`; and the valid `-f` probe returned `http=200` and `exit=0`. Environment behavior matched the prior observations, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-22 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The valid default probe returned `http=200` and `exit=0`; the missing default probe returned `404: Not Found`, `http=404`, and `exit=0`; the missing `-f` probe returned `exit=22` with stderr `curl: (22) The requested URL returned error: 404`; and the valid `-f` probe returned `http=200` and `exit=0`. Environment behavior matched the prior observations, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-23 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined stdout was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the prior observations, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-23 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The valid default probe printed `http=200` and `exit=0`; the missing default probe printed `404: Not Found`, `http=404`, and `exit=0`; the missing `-f` probe printed `exit=22` with stderr `curl: (22) The requested URL returned error: 404`; and the valid `-f` probe printed `http=200` and `exit=0`. Environment behavior matched the prior observations, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-23 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined stdout was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the prior observations, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-24 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The valid default probe returned `http=200` and `exit=0`; the missing default probe returned `404: Not Found`, `http=404`, and `exit=0`; the missing `-f` probe returned `exit=22` with stderr `curl: (22) The requested URL returned error: 404`; and the valid `-f` probe returned `http=200` and `exit=0`. Environment behavior matched the prior observations, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-25 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The valid default probe returned `http=200` and `exit=0`; the missing default probe returned `404: Not Found`, `http=404`, and `exit=0`; the missing `-f` probe returned `exit=22` with stderr `curl: (22) The requested URL returned error: 404`; and the valid `-f` probe returned `http=200` and `exit=0`. Environment behavior matched the prior observations, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-26 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined stdout was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the prior observations, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-28 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The valid default probe returned `http=200` and `exit=0`; the missing default probe returned `404: Not Found`, `http=404`, and `exit=0`; the missing `-f` probe returned `exit=22` with stderr `curl: (22) The requested URL returned error: 404`; and the valid `-f` probe returned `http=200` and `exit=0`. Environment behavior matched the original observation, including no `-w` status line appearing on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-29 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined stdout was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the original observation, including no `-w` status line appearing on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-29 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined stdout was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the original observation, including no `-w` status line appearing on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-29 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined stdout was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the original observation, including no `-w` status line appearing on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-10-31 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined stdout was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the original note, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-11-03 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined stdout was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the original note, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-11-05 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined stdout was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the original note, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-11-05 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined stdout was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the original note, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-11-05 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined stdout was `--- probe1 ---\nhttp=200\nexit=0\n--- probe2 ---\n404: Not Found\nhttp=404\nexit=0\n--- probe3 ---\nexit=22\n--- probe4 ---\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`. Environment behavior matched the original note, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-11-05 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined stdout was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`. Environment behavior matched the original note, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-11-05 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined stdout was `--- probe1 ---\nhttp=200\nexit=0\n--- probe2 ---\n404: Not Found\nhttp=404\nexit=0\n--- probe3 ---\nexit=22\n--- probe4 ---\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`. Environment behavior matched the original note, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-11-05 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined stdout was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`. Environment behavior matched the original note, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-11-05 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined stdout was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`. Environment behavior matched the original note, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-11-05 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined stdout was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`. Environment behavior matched the original note, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-11-05 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined stdout was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`. Environment behavior matched the original note, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-11-05 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined stdout was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`. Environment behavior matched the original note, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-11-07 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined stdout was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`. Environment behavior matched the original note: the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`, with no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-11-07 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined stdout was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`. Environment behavior matched the original note: the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`, with no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-11-12 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined stdout was `http=200\nexit=0\n404: Not Found\nhttp=404\nexit=0\nexit=22\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`. Environment behavior matched the original note: the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`, with no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-11-16 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The valid default probe returned `http=200` and `exit=0`; the missing default probe returned `404: Not Found`, `http=404`, and `exit=0`; the missing `-f` probe returned `exit=22` with stderr `curl: (22) The requested URL returned error: 404`; and the valid `-f` probe returned `http=200` and `exit=0`. Environment behavior matched the original observation, including no `-w` status line appearing on stdout for the failing `curl -fsS` 404 probe.
+
+## Re-verified 2026-11-19 by gotcha-scout
+
+Verdict: STILL HOLDS
+
+Ran the same probes above. The combined stdout was `PROBE 1\nhttp=200\nexit=0\nPROBE 2\n404: Not Found\nhttp=404\nexit=0\nPROBE 3\nexit=22\nPROBE 4\nhttp=200\nexit=0`, with stderr `curl: (22) The requested URL returned error: 404`; the missing raw GitHub URL still exits `0` without `-f` and exits `22` with `-f`. Environment behavior matched the original observation, including no `-w` HTTP status line on stdout for the failing `curl -fsS` 404 probe.
